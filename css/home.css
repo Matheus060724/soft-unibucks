@@ -1,0 +1,260 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+}
+
+.header-nav{
+    background-color: #3b220f;
+    width: 100%;
+    color: rgb(10, 9, 9);
+}
+
+.nav-web{
+    margin: 0 ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 0 20px;
+}
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+.logo{
+    width: 300px;
+    height: 150px;
+    border-radius: 50%;
+    margin-right: 2em;
+}
+
+.nav-list, .list-right{
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list a, .list-right a{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem; 
+}
+
+.img1{
+    height: auto;
+    width: 100%;
+    display: block;
+}
+
+.frame2{
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    min-height: 100vh;
+}
+
+.frame3{
+    color: #211003;
+    display: flex;
+    justify-content: space-between;
+}
+
+.apresentação-cardapio{
+    display: inline;
+    padding: 50px 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fbf4e2;
+}
+
+.titulo-text-cardapio{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+.text-cardapio{
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.botão-cardapio{ 
+    text-align: center;
+}
+
+.botão-cardapio button{
+    height: 80px;
+    width: 300px;
+    border-radius: 25px;
+    color: #211003;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #969e4b;
+}
+
+.botão-cardapio button:hover{
+    background-color: #838a46;
+    cursor: pointer;
+}
+
+.img-home-card{
+    background-color: #845e39;
+    margin: 0px;
+    padding: 10px 30px;
+}
+
+.img-home-card img{
+    min-width: 800px;
+    max-height: 900px;
+    width: auto;
+    height: auto;
+}
+
+
+.botao-link button {
+    height: 80px;
+    width: 300px;
+    border-radius: 25px;
+    color: #211003;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: #e5d19f;
+    text-decoration: none;
+}
+  
+.botao-link:visited {
+    color: #211003;
+}
+  
+  
+
+.frame5 {
+    background-color: #000000; 
+    min-height: 40vh;
+    display: flex;
+    padding: 0px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.fim-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    height: 100%;
+    gap: 90px;
+}
+
+.txt-fim{
+    display: flex;
+    text-align: left;
+}
+
+.txt-fim h1 {
+    color: #d7b381;
+    font-size: 90px;
+    white-space: nowrap;
+}
+
+.Imagem-fim {
+    width: 100%;
+    margin: 0,20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.Imagem-fim img {
+    max-width: 500px;
+    height: auto;
+    margin: 0 10px;
+    padding: 0;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #3b220f;
+    padding: 40px 20px;
+    text-align: center;
+}
+  
+.footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
+  
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+  
+.footer-nav ul {
+    list-style: none;
+    margin: 20px 0;
+}
+  
+.footer-nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+  
+.footer-nav ul li a {
+    text-decoration: none;
+    color: #d2b48c;
+    font-weight: bold;
+    letter-spacing: 5px;
+    transition: 0.3s;
+}
+  
+.footer-nav ul li a:hover {
+    color: #fff;
+}
+  
+  
+.social-icons a img {
+    width: 50px;
+    margin: 10px;
+
+}
+  
+  
+.whatsapp-button {
+    margin: 30px 0;
+}
+  
+.whatsapp-button a {
+    background-color: #f5e1b5;
+    padding: 12px 25px;
+    border-radius: 30px;
+    color: #4e2e1d;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+  
+.whatsapp-button a img {
+    width: 50px;
+}
+  
+.whatsapp-button a:hover {
+    background-color: #e0c98a;
+}
+  
+.copyright {
+    font-size: 14px;
+    color: #c0a97d;
+    margin-top: 20px;
+}
