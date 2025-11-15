@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIBUCKS | Doces</title>
+  <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+
+
+  <div class="top-image">
+    <img src="img/fundo de graos.png" alt="Grãos de café no topo">
+  </div>
+
+  <div class="menu">
+    <a href="cafes.html"><button>CAFÉS</button></a>
+    <a href="chas.html"><button>CHÁS</button></a>
+    <a href="alcoolicos.html"><button>ALCOÓLICOS</button></a>
+    <a href="paes.html"><button>PÃES</button></a>
+    <a href="doces.html"><button>DOCES</button></a>
+    <a href="agua.html"><button>ÁGUA</button></a>
+  </div>
+
+  <main class="cardapio">
+    <h2 class="titulo">DOCES</h2>
+    <div class="produtos">
+
+      <div class="produto">
+        <img src="img/bolo de cenoura.png" alt="Bolo de Cenoura">
+        <p class="nome">Bolo de Cenoura</p>
+        <p class="preco">R$ 14,00</p>
+        <button class="add-carrinho" data-nome="Bolo de Cenoura" data-preco="14.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/brownie recheado .png" alt="Brownie Recheado">
+        <p class="nome">Brownie Recheado</p>
+        <p class="preco">R$ 17,00</p>
+        <button class="add-carrinho" data-nome="Brownie Recheado" data-preco="17.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/pao de chocolate.png" alt="Pão de Chocolate">
+        <p class="nome">Pão de Chocolate</p>
+        <p class="preco">R$ 20,00</p>
+        <button class="add-carrinho" data-nome="Pão de Chocolate" data-preco="20.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/croissant de cacau e amendoa .png" alt="Croissant de Cacau e Amêndoa">
+        <p class="nome">Croissant de Cacau e Amêndoa</p>
+        <p class="preco">R$ 22,00</p>
+        <button class="add-carrinho" data-nome="Croissant de Cacau e Amêndoa" data-preco="22.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/bolo de chocolate.png" alt="Bolo de Chocolate">
+        <p class="nome">Bolo de Chocolate</p>
+        <p class="preco">R$ 17,00</p>
+        <button class="add-carrinho" data-nome="Bolo de Chocolate" data-preco="17.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/bolo de ninho e morango.png" alt="Bolo de Ninho e Morango">
+        <p class="nome">Bolo de Ninho e Morango</p>
+        <p class="preco">R$ 20,00</p>
+        <button class="add-carrinho" data-nome="Bolo de Ninho e Morango" data-preco="20.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/foleado de chocolate.png" alt="Folheado de Chocolate">
+        <p class="nome">Folheado de Chocolate</p>
+        <p class="preco">R$ 25,00</p>
+        <button class="add-carrinho" data-nome="Folheado de Chocolate" data-preco="25.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/foleado de pistache.png" alt="Folheado de Pistache">
+        <p class="nome">Folheado de Pistache</p>
+        <p class="preco">R$ 27,00</p>
+        <button class="add-carrinho" data-nome="Folheado de Pistache" data-preco="27.00">Adicionar ao Carrinho</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button id="finalizar">Finalizar Compra</button>
+  </div>
+
+
+  <script src="js/carrinho.js"></script>
+
+  <footer>
+    <p>&copy; 2025 UNIBUCKS. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

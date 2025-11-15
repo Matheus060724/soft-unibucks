@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIBUCKS | Água</title>
+  <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+
+  <div class="top-image">
+    <img src="img/fundo de graos.png" alt="Grãos de café no topo" />
+  </div>
+
+
+  <div class="menu">
+    <a href="cafes.html"><button>CAFÉS</button></a>
+    <a href="chas.html"><button>CHÁS</button></a>
+    <a href="alcoolicos.html"><button>ALCOÓLICOS</button></a>
+    <a href="paes.html"><button>PÃES</button></a>
+    <a href="doces.html"><button>DOCES</button></a>
+    <a href="agua.html"><button>ÁGUA</button></a>
+  </div>
+
+
+  <main class="cardapio">
+    <h2 class="titulo">ÁGUA &gt; SABORIZADA</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="img/agua saborizada frutas tropicais.png" alt="Água Saborizada Frutas Tropicais">
+        <p class="nome">Água Saborizada Frutas Tropicais</p>
+        <p class="preco">R$ 10,00</p>
+        <button class="add-carrinho" data-nome="Água Saborizada Frutas Tropicais" data-preco="10.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/agua saborizada morango e hortela .png" alt="Água Saborizada Morango e Hortelã">
+        <p class="nome">Água Saborizada Morango e Hortelã</p>
+        <p class="preco">R$ 12,00</p>
+        <button class="add-carrinho" data-nome="Água Saborizada Morango e Hortelã" data-preco="12.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/agua saborizada laranja e morango.png" alt="Água Saborizada Laranja e Morango">
+        <p class="nome">Água Saborizada Laranja e Morango</p>
+        <p class="preco">R$ 12,00</p>
+        <button class="add-carrinho" data-nome="Água Saborizada Laranja e Morango" data-preco="12.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/agua saborizada manga e morango.png" alt="Água Saborizada Manga e Morango">
+        <p class="nome">Água Saborizada Manga e Morango</p>
+        <p class="preco">R$ 13,00</p>
+        <button class="add-carrinho" data-nome="Água Saborizada Manga e Morango" data-preco="13.00">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+  <main class="cardapio">
+    <h2 class="titulo">ÁGUA &gt; MINERAL</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="img/agua mineral natural .png" alt="Água Mineral Natural">
+        <p class="nome">Água Mineral Natural</p>
+        <p class="preco">R$ 8,00</p>
+        <button class="add-carrinho" data-nome="Água Mineral Natural" data-preco="8.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/agua mineral com gas.png" alt="Água Mineral com Gás">
+        <p class="nome">Água Mineral com Gás</p>
+        <p class="preco">R$ 8,00</p>
+        <button class="add-carrinho" data-nome="Água Mineral com Gás" data-preco="8.00">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+>
+  <div id="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button id="finalizar">Finalizar Compra</button>
+  </div>
+
+  <script src="js/carrinho.js"></script>
+
+  <footer>
+    <p>&copy; 2025 UNIBUCKS. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

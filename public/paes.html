@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNIBUCKS | Pães</title>
+  <link rel="stylesheet" href="css/card.css">
+</head>
+<body>
+
+  <div class="top-image">
+    <img src="img/fundo de graos.png" alt="Grãos de café no topo" />
+  </div>
+
+ 
+  <div class="menu">
+    <a href="cafes.html"><button>CAFÉS</button></a>
+    <a href="chas.html"><button>CHÁS</button></a>
+    <a href="alcoolicos.html"><button>ALCOÓLICOS</button></a>
+    <a href="paes.html"><button>PÃES</button></a>
+    <a href="doces.html"><button>DOCES</button></a>
+    <a href="agua.html"><button>ÁGUA</button></a>
+  </div>
+
+  <main class="cardapio">
+    <h2 class="titulo">PÃES</h2>
+    <div class="produtos">
+
+      <div class="produto">
+        <img src="img/croisssant tradicional.png" alt="Croissant Tradicional">
+        <p class="nome">Croissant Tradicional</p>
+        <p class="preco">R$ 12,00</p>
+        <button class="add-carrinho" data-nome="Croissant Tradicional" data-preco="12.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/croissant salame.png" alt="Croissant Salame">
+        <p class="nome">Croissant Salame</p>
+        <p class="preco">R$ 20,00</p>
+        <button class="add-carrinho" data-nome="Croissant Salame" data-preco="20.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/croissant bacon.png" alt="Croissant Bacon">
+        <p class="nome">Croissant Bacon</p>
+        <p class="preco">R$ 24,00</p>
+        <button class="add-carrinho" data-nome="Croissant Bacon" data-preco="24.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/croissant peito de peru.png" alt="Croissant Peito de Peru">
+        <p class="nome">Croissant Peito de Peru</p>
+        <p class="preco">R$ 28,00</p>
+        <button class="add-carrinho" data-nome="Croissant Peito de Peru" data-preco="28.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/pao de queijo cremoso.png" alt="Pão de Queijo Cremoso">
+        <p class="nome">Pão de Queijo Cremoso</p>
+        <p class="preco">R$ 8,00</p>
+        <button class="add-carrinho" data-nome="Pão de Queijo Cremoso" data-preco="8.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/pao de alho.png" alt="Pão de Alho">
+        <p class="nome">Pão de Alho</p>
+        <p class="preco">R$ 14,00</p>
+        <button class="add-carrinho" data-nome="Pão de Alho" data-preco="14.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/sanduiche de presunto e queijo.png" alt="Sanduíche Queijo e Presunto">
+        <p class="nome">Sanduíche Queijo e Presunto</p>
+        <p class="preco">R$ 18,00</p>
+        <button class="add-carrinho" data-nome="Sanduíche Queijo e Presunto" data-preco="18.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/sanduiche queijo e bacon.png" alt="Sanduíche Queijo e Bacon">
+        <p class="nome">Sanduíche Queijo e Bacon</p>
+        <p class="preco">R$ 23,00</p>
+        <button class="add-carrinho" data-nome="Sanduíche Queijo e Bacon" data-preco="23.00">Adicionar ao Carrinho</button>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button id="finalizar">Finalizar Compra</button>
+  </div>
+
+
+  <script src="js/carrinho.js"></script>
+
+  <footer>
+    <p>&copy; 2025 UNIBUCKS. Todos os direitos reservados.</p>
+  </footer>
+
+</body>
+</html>

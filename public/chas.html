@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UNIBUCKS - Chás</title>
+  <link rel="stylesheet" href="css/card.css" />
+</head>
+<body>
+ 
+  <div class="top-image">
+    <img src="img/fundo de graos.png" alt="Grãos de café no topo" />
+  </div>
+
+
+  <div class="menu">
+    <a href="cafes.html"><button>CAFÉS</button></a>
+    <a href="chas.html"><button>CHÁS</button></a>
+    <a href="alcoolicos.html"><button>ALCOÓLICOS</button></a>
+    <a href="paes.html"><button>PÃES</button></a>
+    <a href="doces.html"><button>DOCES</button></a>
+    <a href="agua.html"><button>ÁGUA</button></a>
+  </div>
+
+  <main class="cardapio">
+    <h2 class="titulo">CHÁS</h2>
+    <div class="produtos">
+      <div class="produto">
+        <img src="img/cha com hortela e limão.png" alt="">
+        <p class="nome">Chá com Hortelã e Limão</p>
+        <p class="preco">R$ 8,00</p>
+        <button class="add-carrinho" data-nome="Chá com Hortelã e Limão" data-preco="8.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha com hortela e frutas.png" alt="">
+        <p class="nome">Chá de Frutas e Hortelã</p>
+        <p class="preco">R$ 10,00</p>
+        <button class="add-carrinho" data-nome="Chá de Frutas e Hortelã" data-preco="10.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de cravo e hortela.png" alt="">
+        <p class="nome">Chá de Cravo e Hortelã</p>
+        <p class="preco">R$ 8,00</p>
+        <button class="add-carrinho" data-nome="Chá de Cravo e Hortelã" data-preco="8.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de frutas e hortelã.png" alt="">
+        <p class="nome">Chá de Frutas e Hortelã</p>
+        <p class="preco">R$ 10,00</p>
+        <button class="add-carrinho" data-nome="Chá de Frutas e Hortelã" data-preco="10.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de cravo e laranja.png" alt="">
+        <p class="nome">Chá de Cravo e Laranja</p>
+        <p class="preco">R$ 8,00</p>
+        <button class="add-carrinho" data-nome="Chá de Cravo e Laranja" data-preco="8.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de canela.png" alt="">
+        <p class="nome">Chá de Canela</p>
+        <p class="preco">R$ 10,00</p>
+        <button class="add-carrinho" data-nome="Chá de Canela" data-preco="10.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de laranja.png" alt="">
+        <p class="nome">Chá de Laranja</p>
+        <p class="preco">R$ 12,00</p>
+        <button class="add-carrinho" data-nome="Chá de Laranja" data-preco="12.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de laranja e hortela.png" alt="">
+        <p class="nome">Chá de Laranja e Hortelã</p>
+        <p class="preco">R$ 10,00</p>
+        <button class="add-carrinho" data-nome="Chá de Laranja e Hortelã" data-preco="10.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de canela e laranja 2.png" alt="">
+        <p class="nome">Chá de Canela e Laranja</p>
+        <p class="preco">R$ 12,00</p>
+        <button class="add-carrinho" data-nome="Chá de Canela e Laranja" data-preco="12.00">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="produto">
+        <img src="img/cha de canela e castanha .png" alt="">
+        <p class="nome">Chá de Canela e Castanha</p>
+        <p class="preco">R$ 12,00</p>
+        <button class="add-carrinho" data-nome="Chá de Canela e Castanha" data-preco="12.00">Adicionar ao Carrinho</button>
+      </div>
+    </div>
+  </main>
+
+
+  <div id="carrinho">
+    <h2>🛒 Carrinho</h2>
+    <ul id="lista-carrinho"></ul>
+    <p><strong>Total:</strong> R$ <span id="total">0.00</span></p>
+    <button id="finalizar">Finalizar Compra</button>
+  </div>
+
+  <script src="js/carrinho.js"></script>
+
+</body>
+</html>
