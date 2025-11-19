@@ -1,9 +1,10 @@
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const { PrismaClient } = require('../generated/mongo');
+const mongo = new PrismaClient();
+
 
 module.exports = {
     async loginOrCreate(data) {
-        const user = await prisma.user.findUnique({
+        const user = await mongo.user.findUnique({
             where: { email: data.email }
         });
 
@@ -14,7 +15,7 @@ module.exports = {
             };
         }
 
-        const newUser = await prisma.user.create({
+        const newUser = await mongo.user.create({
             data: {
                 email: data.email,
                 name: data.name,
@@ -28,8 +29,7 @@ module.exports = {
             data: { message: "Usuário criado", user: newUser }
         };
     },
-
     async listUsers() {
-        return await prisma.user.findMany();
+        return await mongo.user.findMany();
     }
 };

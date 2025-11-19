@@ -7,7 +7,6 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(express.static('public'));
-
 app.use((req, res, next) => {
     console.log(`\n[${req.method}] ${req.url}`);
 
@@ -17,8 +16,6 @@ app.use((req, res, next) => {
 
     next();
 });
-
-
 app.use(session({
     secret: "unibucks",
     resave: false,
@@ -28,9 +25,8 @@ app.use(session({
         secure: false
     }
 }));
-
-
 app.use('/users', userRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Rodando na porta ${PORT}`);

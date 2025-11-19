@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../../src/generated/mssql"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("MSSQL_URL")
+}
+
+model Bebidas {
+  id_item    Int      @id(map: "PK__Bebidas__87C9438BA896E8A0") @default(autoincrement())
+  tipo       String?  @db.VarChar(50)
+  milimetros String?  @db.VarChar(20)
+  id_produto Int
+  Cardapio   Cardapio @relation(fields: [id_produto], references: [id_produto], onUpdate: NoAction, map: "FK_Bebidas_Cardapio")
+  Cafe       Cafe?
+  Cha        Cha?
+  Outros     Outros?
+}
+
+model Cafe {
+  id_item Int     @id(map: "PK__Cafe__87C9438B21B73C2E")
+  item    String? @db.VarChar(100)
+  Bebidas Bebidas @relation(fields: [id_item], references: [id_item], onUpdate: NoAction, map: "FK_Cafe_Bebidas")
+}
+
+model Cardapio {
+  id_produto Int       @id(map: "PK__Cardapio__BA38A6B89E613385") @default(autoincrement())
+  valor      Decimal   @db.Decimal(10, 2)
+  tipo       String    @db.VarChar(50)
+  Bebidas    Bebidas[]
+  Comidas    Comidas[]
+}
+
+model Cha {
+  id_item Int     @id(map: "PK__Cha__87C9438BA85B9A2B")
+  item    String? @db.VarChar(100)
+  Bebidas Bebidas @relation(fields: [id_item], references: [id_item], onUpdate: NoAction, map: "FK_Cha_Bebidas")
+}
+
+model Comidas {
+  id_item    Int      @id(map: "PK__Comidas__87C9438B56D83015") @default(autoincrement())
+  tipo       String?  @db.VarChar(50)
+  peso       String?  @db.VarChar(20)
+  id_produto Int
+  Cardapio   Cardapio @relation(fields: [id_produto], references: [id_produto], onUpdate: NoAction, map: "FK_Comidas_Cardapio")
+  Doce       Doce?
+  Salgado    Salgado?
+}
+
+model Doce {
+  id_item Int     @id(map: "PK__Doce__87C9438B3EE07AC5")
+  item    String? @db.VarChar(100)
+  Comidas Comidas @relation(fields: [id_item], references: [id_item], onUpdate: NoAction, map: "FK_Doce_Comidas")
+}
+
+model Outros {
+  id_item Int     @id(map: "PK__Outros__87C9438BB874DC28")
+  item    String? @db.VarChar(100)
+  Bebidas Bebidas @relation(fields: [id_item], references: [id_item], onUpdate: NoAction, map: "FK_Outros_Bebidas")
+}
+
+model Salgado {
+  id_item Int     @id(map: "PK__Salgado__87C9438B47DCAF88")
+  item    String? @db.VarChar(100)
+  Comidas Comidas @relation(fields: [id_item], references: [id_item], onUpdate: NoAction, map: "FK_Salgado_Comidas")
+}
+
+model sysdiagrams {
+  name         String @db.NVarChar(128)
+  principal_id Int
+  diagram_id   Int    @id(map: "PK__sysdiagr__C2B05B61149AAAD7") @default(autoincrement())
+  version      Int?
+  definition   Bytes?
+
+  @@unique([principal_id, name], map: "UK_principal_name")
+}
