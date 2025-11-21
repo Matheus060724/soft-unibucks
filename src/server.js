@@ -27,6 +27,10 @@ app.use(session({
 }));
 app.use('/users', userRoutes);
 
+const pedidoRoutes = require("./routes/pedidoRoutes");
+
+app.use("/pedidos", pedidoRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Rodando na porta ${PORT}`);

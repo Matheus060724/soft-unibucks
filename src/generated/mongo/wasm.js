@@ -137,7 +137,7 @@ const config = {
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": "../../../.env",
+    "rootEnvPath": null,
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../../../prisma/mongo",
@@ -151,13 +151,13 @@ const config = {
   "inlineDatasources": {
     "db": {
       "url": {
-        "fromEnvVar": "DATABASE_URL",
+        "fromEnvVar": "DATABASE_URL_MONGO",
         "value": null
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../../src/generated/mongo\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL\")\n}\n\nmodel user {\n  id        String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  name      String?\n  email     String   @unique\n  CPF       String?\n  telefone  String?\n  createdAt DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "4e07efca77c68059b124cd2e90f26da778e4df8649767a19db5dac988d80d47f",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../../src/generated/mongo\"\n}\n\ndatasource db {\n  provider = \"mongodb\"\n  url      = env(\"DATABASE_URL_MONGO\")\n}\n\nmodel user {\n  id        String   @id @default(auto()) @map(\"_id\") @db.ObjectId\n  name      String?\n  email     String   @unique\n  CPF       String?\n  telefone  String?\n  createdAt DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "885d79749c08764b2c04a72187b300331a71a2c255f7509eac2bf4e4e7892a97",
   "copyEngine": true
 }
 config.dirname = '/'
@@ -176,7 +176,7 @@ config.compilerWasm = undefined
 
 config.injectableEdgeEnv = () => ({
   parsed: {
-    DATABASE_URL: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL || undefined
+    DATABASE_URL_MONGO: typeof globalThis !== 'undefined' && globalThis['DATABASE_URL_MONGO'] || typeof process !== 'undefined' && process.env && process.env.DATABASE_URL_MONGO || undefined
   }
 })
 

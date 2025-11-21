@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Cafeteria Unibucks</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #8B7355;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #CDAA7D;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2 {
+            text-align: center;
+            color: #6b3e26;
+            margin-bottom: 10px;
+        }
+
+        .pagamento {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .formulario,
+        .resumo {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .opcoes-pagamento {
+            display: flex;
+            gap: 10px;
+            justify-content: start;
+            margin-bottom: 10px;
+        }
+
+        .linha-cartao {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-confirmar {
+            background-color: #7b3f00;
+            color: #fff;
+            border: none;
+            padding: 12px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .btn-confirmar:hover {
+            background-color: #5f2d00;
+        }
+
+        .qr-code {
+            display: none;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .qr-code img {
+            width: 180px;
+            height: 180px;
+        }
+
+        .resumo {
+            background-color: #6b3e26;
+            border: 1px solid #000000;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 0.8;
+            min-width: 250px;
+        }
+
+        .resumo ul {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .resumo li {
+            padding: 5px 0;
+            border-bottom: 1px solid #4e1f00;
+        }
+
+        .pagamento,
+        .resumo,
+        form,
+        h3 {
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cafeteria Unibucks</h1>
+        <h2>Pagamento do Pedido</h2>
+
+        <div class="pagamento">
+            <div class="formulario">
+                <h3>Dados do Cliente</h3>
+                <form>
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" placeholder="Digite seu nome completo" required>
+
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" placeholder="exemplo@email.com" required>
+
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" placeholder="(11) 99999-9999" required>
+
+                    <h3>Método de Pagamento</h3>
+                    <div class="opcoes-pagamento">
+                        <label><input type="radio" name="pagamento" value="cartao" checked> Cartão de Crédito</label>
+                        <label><input type="radio" name="pagamento" value="pix"> PIX</label>
+                    </div>
+
+                    <div class="dados-cartao">
+                        <label for="numero-cartao">Número do Cartão:</label>
+                        <input type="text" id="numero-cartao" maxlength="19" placeholder="0000 0000 0000 0000">
+
+                        <div class="linha-cartao">
+                            <div>
+                                <label for="validade">Validade:</label>
+                                <input type="text" id="validade" placeholder="MM/AA" maxlength="5">
+                            </div>
+                            <div>
+                                <label for="cvv">CVV:</label>
+                                <input type="text" id="cvv" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="qr-code" id="qrCode">
+                        <h4>Escaneie o QR Code para pagar via PIX</h4>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?data=PIX%20Cafeteria%20Unibucks&size=180x180"
+                            alt="QR Code PIX">
+                    </div>
+
+                    <button type="submit" class="btn-confirmar">Confirmar Pagamento</button>
+                </form>
+            </div>
+
+            <div class="resumo">
+                <h3>Resumo do Pedido</h3>
+                <ul>
+                    <li>Café Expresso — R$ 6,00</li>
+                    <li>Pão de Queijo — R$ 5,00</li>
+                    <li>Capuccino — R$ 8,00</li>
+                </ul>
+                <hr>
+                <p><strong>Total: R$ 19,00</strong></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const radioPagamentos = document.querySelectorAll('input[name="pagamento"]');
+        const dadosCartao = document.querySelector('.dados-cartao');
+        const qrCode = document.getElementById('qrCode');
+
+        radioPagamentos.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.value === 'pix') {
+                    dadosCartao.style.display = 'none';
+                    qrCode.style.display = 'block';
+                } else {
+                    dadosCartao.style.display = 'block';
+                    qrCode.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
