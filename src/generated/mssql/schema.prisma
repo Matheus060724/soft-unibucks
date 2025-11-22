@@ -5,7 +5,7 @@ generator client {
 
 datasource db {
   provider = "sqlserver"
-  url      = env("MSSQL_URL")
+  url      = env("DATABASE_URL_MSSQL")
 }
 
 model Bebidas {
@@ -75,4 +75,35 @@ model sysdiagrams {
   definition   Bytes?
 
   @@unique([principal_id, name], map: "UK_principal_name")
+}
+
+model Cliente {
+  id_cliente Int     @id @default(autoincrement())
+  email      String  @unique
+  nome       String?
+  cpf        String? @unique
+  telefone   String?
+
+  pedidos Pedido[]
+}
+
+model Pedido {
+  id_pedido  Int      @id @default(autoincrement())
+  id_cliente Int
+  total      Decimal  @db.Decimal(10, 2)
+  status     String   @db.VarChar(30)
+  criado_em  DateTime @default(now())
+
+  cliente Cliente      @relation(fields: [id_cliente], references: [id_cliente])
+  itens   ItemPedido[]
+}
+
+model ItemPedido {
+  id_item_pedido Int     @id @default(autoincrement())
+  id_pedido      Int
+  id_produto     Int
+  quantidade     Int
+  preco          Decimal @db.Decimal(10, 2)
+
+  pedido Pedido @relation(fields: [id_pedido], references: [id_pedido])
 }

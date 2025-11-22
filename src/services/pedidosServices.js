@@ -1,12 +1,43 @@
-const { PrismaClient } = require('../generated/mssql');
-const prismaMssql = new PrismaClient();
+// === IMPORTA OS CLIENTES DO MONGO ===
+const { PrismaClient: PrismaMongo } = require("../generated/mongo");
+const prismaMongo = new PrismaMongo();
 
+// === IMPORTA O MSSQL PARA OS PEDIDOS ===
+const { PrismaClient: PrismaMssql } = require("../generated/mssql");
+const prismaMssql = new PrismaMssql();
+
+const { ObjectId } = require("mongodb");
+
+// === CRIAR PEDIDO ===
 async function criarPedido({ id_cliente, itens }) {
-    const total = itens.reduce((acc, item) => acc + (item.preco * item.quantidade), 0);
 
+    // Valida o ObjectId
+    if (!ObjectId.isValid(id_cliente)) {
+        throw new Error("ID de cliente inválido. Deve ser um ObjectId do MongoDB.");
+    }
+
+    // Converte para ObjectId
+    const mongoId = new ObjectId(id_cliente);
+
+    // Busca cliente no MongoDB
+    const cliente = await prismaMongo.user.findUnique({
+        where: { id: mongoId }
+    });
+
+    if (!cliente) {
+        throw new Error("Cliente não encontrado no MongoDB.");
+    }
+
+    // Calcula o total
+    const total = itens.reduce(
+        (acc, item) => acc + (item.preco * item.quantidade),
+        0
+    );
+
+    // Cria o pedido no SQL
     const pedido = await prismaMssql.pedido.create({
         data: {
-            id_cliente,
+            id_cliente: String(id_cliente), // salva como string
             total,
             status: "aguardando_pagamento",
             itens: {
@@ -17,40 +48,12 @@ async function criarPedido({ id_cliente, itens }) {
                 }))
             }
         },
-        include: {
-            itens: true
-        }
+        include: { itens: true }
     });
 
     return pedido;
 }
 
-async function listarCozinha() {
-    return await prismaMssql.pedido.findMany({
-        where: {
-            status: { in: ["pago", "em_preparo"] }
-        },
-        include: { itens: true }
-    });
-}
-
-async function atualizarStatus(id_pedido, status) {
-    return await prismaMssql.pedido.update({
-        where: { id_pedido },
-        data: { status }
-    });
-}
-
-async function listarTodos() {
-    return await prismaMssql.pedido.findMany({
-        include: { itens: true }
-    });
-}
-
-
 module.exports = {
-    criarPedido,
-    listarCozinha,
-    atualizarStatus,
-    listarTodos
+    criarPedido
 };

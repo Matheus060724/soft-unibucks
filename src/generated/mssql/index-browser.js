@@ -174,6 +174,30 @@ exports.Prisma.SysdiagramsScalarFieldEnum = {
   definition: 'definition'
 };
 
+exports.Prisma.ClienteScalarFieldEnum = {
+  id_cliente: 'id_cliente',
+  email: 'email',
+  nome: 'nome',
+  cpf: 'cpf',
+  telefone: 'telefone'
+};
+
+exports.Prisma.PedidoScalarFieldEnum = {
+  id_pedido: 'id_pedido',
+  id_cliente: 'id_cliente',
+  total: 'total',
+  status: 'status',
+  criado_em: 'criado_em'
+};
+
+exports.Prisma.ItemPedidoScalarFieldEnum = {
+  id_item_pedido: 'id_item_pedido',
+  id_pedido: 'id_pedido',
+  id_produto: 'id_produto',
+  quantidade: 'quantidade',
+  preco: 'preco'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -194,7 +218,10 @@ exports.Prisma.ModelName = {
   Doce: 'Doce',
   Outros: 'Outros',
   Salgado: 'Salgado',
-  sysdiagrams: 'sysdiagrams'
+  sysdiagrams: 'sysdiagrams',
+  Cliente: 'Cliente',
+  Pedido: 'Pedido',
+  ItemPedido: 'ItemPedido'
 };
 
 /**

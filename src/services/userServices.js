@@ -4,7 +4,6 @@ const mongo = new PrismaClient();
 module.exports = {
     async loginOrCreate(data) {
 
-        // 1. Procurar usuário pelo e-mail
         const user = await mongo.user.findUnique({
             where: { email: data.email }
         });
@@ -17,7 +16,6 @@ module.exports = {
             };
         }
 
-        // 3. Montar payload SEM campos undefined
         const payload = {
             email: data.email,
         };
@@ -26,7 +24,6 @@ module.exports = {
         if (data.CPF) payload.CPF = data.CPF;
         if (data.telefone) payload.telefone = data.telefone;
 
-        // 4. Criar novo usuário no Mongo
         const newUser = await mongo.user.create({
             data: payload
         });
@@ -37,7 +34,6 @@ module.exports = {
         };
     },
 
-    // Lista usuários (igual estava, sem erro)
     async listUsers() {
         return await mongo.user.findMany();
     }
